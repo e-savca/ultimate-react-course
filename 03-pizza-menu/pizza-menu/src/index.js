@@ -67,14 +67,35 @@ function Header() {
 }
 
 function Menu() {
+  //   const pizzasArray;
+  //   function AddPizzas(){
+  //     pizzaData.map((pizzaDetails) => {
+  //         <Pizza
+  //           name={pizzaDetails.name}
+  //           ingredients={pizzaDetails.ingredients}
+  //           photoName={pizzaDetails.photoName}
+  //           price={pizzaDetails.price}
+  //         />;
+  //       });
+  //   }
   return (
     <main className="menu">
       <h2>Our menu!</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      {/* {pizzasArray} */}
     </main>
+  );
+}
+
+function Pizza(props) {
+  return (
+    <div className="pizza">
+      <img src={props.photoName} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <p>Price {props.ingredients}</p>
+      </div>
+    </div>
   );
 }
 
@@ -96,17 +117,6 @@ function Footer() {
     </footer>
   );
   //   return React.createElement("footer", null, "We're currently open!");
-}
-
-function Pizza() {
-  return (
-    <div>
-      <h3>Pizza Spinaci</h3>
-      <p>Tomato, mozarella, and pepperoni</p>
-      <p>Price 18</p>
-      <img src="pizzas/spinaci.jpg" alt="pizza spinaci" />
-    </div>
-  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
