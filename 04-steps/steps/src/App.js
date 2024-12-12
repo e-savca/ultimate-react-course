@@ -1,3 +1,5 @@
+
+import { useState } from "react";
 const messages = [
   "Learn React ⚛️",
   "Apply for jobs 💼",
@@ -5,7 +7,17 @@ const messages = [
 ];
 
 function App() {
-  const step = 1;
+  const [step, setStep] = useState(1);
+
+  const increment = () => {
+    if(step === messages.length) return;
+    setStep(step + 1);
+  };
+
+  const decrement = () => {
+    if(step === 1) return;
+    setStep(step - 1);
+  };
 
   return (
     <>
@@ -21,10 +33,10 @@ function App() {
         </p>
 
         <div className="buttons">
-          <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+          <button style={{ backgroundColor: "#7950f2", color: "#fff" }} onClick={decrement}>
             Previous
           </button>
-          <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+          <button style={{ backgroundColor: "#7950f2", color: "#fff" }} onClick={increment}>
             Next
           </button>
         </div>
